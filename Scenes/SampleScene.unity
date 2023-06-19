@@ -744,8 +744,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer1: 0
-  speed: 0
-  rb: {fileID: 0}
+  speed: 5
+  rb: {fileID: 1034141767}
 --- !u!50 &1034141767
 Rigidbody2D:
   serializedVersion: 4
