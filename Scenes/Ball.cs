@@ -22,8 +22,8 @@ public class Ball : MonoBehaviour
     // Launch is called before the first frame update
     private void Launch()
     {
-        float x = Random.Range(0, 2) == ? -1 : 1;
-        float y = Random.Range(0, 2) == ? -1 : 1;
+        float x = Random.Range(0, 2) == 0 ? -1 : 1;
+        float y = Random.Range(0, 2) == 0 ? -1 : 1;
         // Generates a random integer
         // If the random value is equal to 0, the ternary operator ?
         // Assigns the value -1 to the variable.
