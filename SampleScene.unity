@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 29692110}
+  - component: {fileID: 29692111}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -154,6 +155,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &29692111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29692109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 529164d5ffb027a45899404f22a2db16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 745500060}
+  Player1Paddle: {fileID: 258811356}
+  Player1Goal: {fileID: 1161771400}
+  Player2Paddle: {fileID: 1034141765}
+  Player2Goal: {fileID: 1299339413}
+  Player1Text: {fileID: 1845900802}
+  Player2Text: {fileID: 1206654282}
 --- !u!1 &258811356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,6 +1196,7 @@ GameObject:
   - component: {fileID: 1161771403}
   - component: {fileID: 1161771402}
   - component: {fileID: 1161771401}
+  - component: {fileID: 1161771404}
   m_Layer: 0
   m_Name: Player1Goal
   m_TagString: Untagged
@@ -1295,6 +1316,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1161771404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161771400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163acf2f1b9af694e8dfeed83e2326ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer1Goal: 0
 --- !u!1 &1206654282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,6 +1475,7 @@ GameObject:
   - component: {fileID: 1299339416}
   - component: {fileID: 1299339415}
   - component: {fileID: 1299339414}
+  - component: {fileID: 1299339417}
   m_Layer: 0
   m_Name: Player2Goal
   m_TagString: Untagged
@@ -1560,6 +1595,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1299339417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299339413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163acf2f1b9af694e8dfeed83e2326ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer1Goal: 0
 --- !u!1 &1800633930
 GameObject:
   m_ObjectHideFlags: 0

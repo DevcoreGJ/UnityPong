@@ -3,7 +3,14 @@ guid: 529164d5ffb027a45899404f22a2db16
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ball: {fileID: 8858170764308507317, guid: 6ebcbed6fa404244689f288f7a9265a1, type: 3}
+  - Player1Paddle: {instanceID: 0}
+  - Player1Goal: {instanceID: 0}
+  - Player2Paddle: {instanceID: 0}
+  - Player2Goal: {instanceID: 0}
+  - Player1Text: {instanceID: 0}
+  - Player2Text: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
