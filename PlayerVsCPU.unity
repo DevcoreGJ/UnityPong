@@ -1072,8 +1072,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballTransform: {fileID: 745500064}
-  moveSpeed: 5
-  movementDelay: 0.2
+  speed: 5
+  rb: {fileID: 1034141767}
+  movementDelay: 0.24
+  startPosition: {x: 16, y: 0, z: 0}
 --- !u!1 &1110003086
 GameObject:
   m_ObjectHideFlags: 0

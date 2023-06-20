@@ -5,12 +5,15 @@ using UnityEngine;
 public class CPUPaddle : MonoBehaviour
 {
     public Transform ballTransform;
-    public float moveSpeed = 5f;
+    public float speed;
+    public Rigidbody2D rb;
     public float movementDelay = 0.2f; // Delay before the computer paddle starts moving towards the ball
 
     private float movementTimer; // Timer for movement delay
 
     private float movement; // Stores the movement value received from the Paddle script
+
+    public Vector3 startPosition;
 
     private void Update()
     {
@@ -23,15 +26,19 @@ public class CPUPaddle : MonoBehaviour
             // Move the computer paddle towards the ball's y-position
             float targetY = ballTransform.position.y;
             float currentY = transform.position.y;
-            float newY = Mathf.MoveTowards(currentY, targetY, moveSpeed * Time.deltaTime);
+            float newY = Mathf.MoveTowards(currentY, targetY, speed * Time.deltaTime);
 
             // Apply the new position to the computer paddle
             transform.position = new Vector3(transform.position.x, newY, transform.position.z);
         }
+
+        rb.velocity = new Vector2(rb.velocity.x, movement * speed);
     }
 
     private void Start()
     {
+
+        startPosition = transform.position;
         movementTimer = movementDelay;
 
         // Subscribe to the OnMovementEvent of the Paddle script
@@ -49,5 +56,9 @@ public class CPUPaddle : MonoBehaviour
         movement = movementValue;
     }
 
-    // Use the movement value in the AI logic to control the CPUPaddle
+    public void Reset()
+    {
+        rb.velocity = Vector2.zero;
+        transform.position = startPosition;
+    }
 }
