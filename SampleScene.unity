@@ -209,6 +209,7 @@ MonoBehaviour:
   isPlayer1: 1
   speed: 5
   rb: {fileID: 258811358}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!50 &258811358
 Rigidbody2D:
   serializedVersion: 4
@@ -743,6 +744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rb: {fileID: 745500061}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &784387595
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,6 +918,7 @@ MonoBehaviour:
   isPlayer1: 0
   speed: 5
   rb: {fileID: 1034141767}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!50 &1034141767
 Rigidbody2D:
   serializedVersion: 4
@@ -1328,7 +1331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163acf2f1b9af694e8dfeed83e2326ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer1Goal: 0
+  isPlayer1Goal: 1
 --- !u!1 &1206654282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,7 +1367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -607, y: -130.5}
+  m_AnchoredPosition: {x: 607, y: -130.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1206654284
