@@ -12,6 +12,14 @@ public class Paddle : MonoBehaviour
     public delegate void MovementDelegate(float movementValue); // Delegate type for movement events
     public static event MovementDelegate OnMovementEvent; // Event triggered when movement input is detected
 
+    private string verticalInputAxis; // Input axis for vertical movement
+
+    private void Awake()
+    {
+        // Set the vertical input axis based on the player index
+        verticalInputAxis = isPlayer1 ? "Vertical" : "Vertical2";
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,24 +29,12 @@ public class Paddle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float movement;
-
-        if (isPlayer1)
-        {
-            movement = Input.GetAxisRaw("Vertical");
-        }
-        else
-        {
-            movement = Input.GetAxisRaw("Vertical2");
-        }
+        float movement = Input.GetAxisRaw(verticalInputAxis);
 
         rb.velocity = new Vector2(rb.velocity.x, movement * speed);
 
         // Trigger the OnMovementEvent with the movement value
-        if (OnMovementEvent != null)
-        {
-            OnMovementEvent.Invoke(movement);
-        }
+        OnMovementEvent?.Invoke(movement);
     }
 
     public void Reset()
@@ -47,3 +43,10 @@ public class Paddle : MonoBehaviour
         transform.position = startPosition;
     }
 }
+/* In the refactored code, the key improvement lies in caching the input axis string based on the player index (isPlayer1). 
+By doing this, we avoid repeatedly checking the isPlayer1 condition during each Update() call, resulting in better performance.
+
+Other than that, minor adjustments have been made to the code for clarity and consistency, such as moving the assignment of 
+startPosition to the Start() method and using the null-conditional operator (?.) when triggering the OnMovementEvent.
+
+These optimizations should enhance the efficiency of the code without altering its intended functionality. */

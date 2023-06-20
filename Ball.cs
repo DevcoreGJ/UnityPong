@@ -20,27 +20,25 @@ public class Ball : MonoBehaviour
 
     }
 
+    // This method resets the object's position and velocity, preparing for a new adventure!
+
     public void Reset()
     {
-        rb.velocity = Vector2.zero;
-        transform.position = startPosition;
-        Launch();
+        rb.velocity = Vector2.zero; // Applying the brakes, bringing the object to a graceful stop.
+        transform.position = startPosition; // Teleporting the object to its place of origin. Time to start over!
+        Launch(); // Activating the launch function to unleash the power of my balls. Hold on tight!
     }
+
 
     // Launch is called before the first frame update
     private void Launch()
     {
-        float x = Random.Range(0, 2) == 0 ? -1 : 1;
-        float y = Random.Range(0, 2) == 0 ? -1 : 1;
-        // Generates a random integer
-        // If the random value is equal to 0, the ternary operator ?
-        // Assigns the value -1 to the variable.
-        // Otherwise it assigns 1 to variable.
+        // Flip a coin to determine the direction
+        float x = Random.Range(0, 2) == 0 ? -1 : 1; // Heads or tails? Let's go left or right!
+        float y = Random.Range(0, 2) == 0 ? -1 : 1; // Up or down? Let's leave it to chance!
 
-        rb.velocity = new Vector2(speed * x, speed * y); // velocity property of rigid body component in game.
-        // creates a new Vector2 object
-        // x and y are variables that determine the direction of the velocity
-        // values of 1 or - 1
+        // Set the velocity of the rigid body for epic motion
+        rb.velocity = new Vector2(speed * x, speed * y); // Time to unleash the velocity!
     }
  
 }
