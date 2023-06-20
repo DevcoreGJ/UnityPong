@@ -26,4 +26,20 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void PlayCPU()
+    {
+        // Deactivate all currently loaded scenes
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            Scene scene = SceneManager.GetSceneAt(i);
+            if (scene.name != SceneManager.GetActiveScene().name)
+            {
+                SceneManager.SetActiveScene(scene);
+                SceneManager.UnloadSceneAsync(scene);
+            }
+        }
+        // Load the scene after the next scene in the build index
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+    }
 }
