@@ -27,12 +27,21 @@ public class GameManager : MonoBehaviour
     {
         Player1Score++;
         Player1Text.GetComponent < TextMeshProUGUI > ().text = Player1Score.ToString();
+        ResetPosition();
     }
 
     public void Player2Scored()
     {
         Player2Score++;
         Player2Text.GetComponent < TextMeshProUGUI > ().text = Player2Score.ToString();
+        ResetPosition();
+    }
+
+    private void ResetPosition()
+    {
+        ball.GetComponent<Ball>().Reset();
+        Player1Paddle.GetComponent<Paddle>().Reset();
+        Player2Paddle.GetComponent<Paddle>().Reset();
     }
 
     // Start is called before the first frame update
